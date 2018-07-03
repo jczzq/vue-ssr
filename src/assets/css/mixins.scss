@@ -1,0 +1,81 @@
+%clearfix {
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+
+  &:before {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin iconfont($size: 16px) {
+  font-family: "iconfont" !important;
+  font-size: $size;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin avatar($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size / 2;
+}
+
+@mixin avatar-2($size) {
+  width: $size;
+  height: $size;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: $size / 2;
+    border: 1px solid #e5e9ef;
+  }
+}
+
+@mixin twoline($line-height) {
+  line-height: $line-height;
+  max-height: $line-height * 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@mixin input-placeholder($color: #fff) {
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $color;
+    opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $color;
+    opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $color;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color:    $color;
+  }
+}
+
+@mixin icon($size: contain) {
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: center;
+}
+
+@mixin filter-blur($size: 5) {
+  filter: blur($size + px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=$size, MakeShadow=false);
+}

@@ -1,0 +1,10 @@
+.el-dropdown-menu__item {
+  float: none;
+  text-align: center;
+
+  & > a, & > button {
+    padding: 0 20px;
+    display: block;
+    height: 36px;
+  }
+}

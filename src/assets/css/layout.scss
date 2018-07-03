@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+
+  &:before {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+@media (min-width: 1050px) {
+  .container {
+    width: 1160px;
+  }
+}
+
+.col-main {
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+.col-aside {
+  width: 260px;
+  float: right;
+}
+
+.col-main,
+.col-aside {
+  position: relative;
+  min-height: 1px;
+}
+
+@media (max-width: 1050px) {
+  .col-main,
+  .col-aside {
+    width: 100%;
+    float: none;
+    margin-bottom: 30px;
+    padding-right: 0;
+  }
+}

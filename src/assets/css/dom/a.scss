@@ -1,0 +1,9 @@
+.href-fade-blue {
+  transition: $fade-time;
+  color: $color-link;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-blue-normal;
+  }
+}

@@ -1,0 +1,59 @@
+{
+    // 不自动检测缩进
+    "editor.detectIndentation": false,
+    // vue html部分格式工具
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatterOptions": {
+        // vue-html格式化方式
+        "js-beautify-html": {
+            // attr自动换行对齐
+            "wrap_attributes": "force-aligned",
+            // 不换行元素
+            "unformatted": [
+                "area",
+                "base",
+                "br",
+                "col",
+                "embed",
+                "hr",
+                "img",
+                "input",
+                "keygen",
+                "link",
+                "menuitem",
+                "meta",
+                "param",
+                "source",
+                "track",
+                "wbr",
+                "i"
+            ]
+        }
+    },
+    // 编辑器显示空格字符
+    "editor.renderWhitespace": "boundary",
+    // 显示建议
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    // 配合vscode-element-helper扩展，element组件提示
+    "element-helper.version": "2.2",
+    "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+    // 缩进规范
+    "beautify.tabSize": 2,
+    "editor.snippetSuggestions": "top",
+    // 全局搜索忽略文件
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true,
+        "**/static": true,
+        "**/theme": true
+    },
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+    "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    // 禁止扩展自动更新
+    "extensions.autoUpdate": false,
+    // 粘贴代码禁止自动格式化
+    "editor.autoIndent": true
+}

@@ -1,0 +1,32 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "last 3 versions",
+            "ie > 8"
+          ]
+        }
+      }
+    ],
+    "stage-0"
+  ],
+  "plugins": [
+    "lodash",
+    "syntax-dynamic-import",
+    "transform-runtime",
+    ["component", [
+      {
+        "libraryName": "element-ui",
+        "style": false
+      },
+      {
+        "libraryName": "mint-ui",
+        "style": true
+      }
+    ]]
+  ]
+}

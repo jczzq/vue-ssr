@@ -1,0 +1,22 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: .2s background-color, opacity linear;
+  z-index: 11;
+  pointer-events: auto;
+
+  &.show {
+    background-color: #ffffff;
+    opacity: .5;
+    filter: blur(50px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=50, MakeShadow=false);
+  }
+
+  &.hide {
+    background-color: transparent;
+    opacity: 0;
+  }
+}
