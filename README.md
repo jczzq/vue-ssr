@@ -1,4 +1,7 @@
-### run
+### 什么是SSR
+    1.SSR（server-side render），服务端渲染。
+
+### 快速启动
 
 1. git clone
 2. yarn
@@ -6,7 +9,7 @@
 4. npm run dev
 5. open localhost:3000
 
-### dir
+### 文件结构
 
 ``` shell
 ├── build（webpack 打包文件）
