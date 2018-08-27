@@ -2,7 +2,7 @@ module.exports = {
     "printWidth": 100,
     "eslintIntegration": true,
     "stylelintIntegration": true,
-    "tabWidth": 2,
+    "tabWidth": 4,
     "singleQuote": true,
-    "semi": false
+    "semi": true
 };

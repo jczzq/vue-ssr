@@ -1,17 +1,18 @@
-### 什么是SSR
+### 什么是 SSR
+
     1.SSR（server-side render），服务端渲染。
 
 ### 快速启动
 
-1. git clone
-2. yarn
-3. copy & rename `.env.example.js` => `.env.js`
-4. npm run dev
-5. open localhost:3000
+1.  git clone
+2.  yarn
+3.  copy & rename `.env.example.js` => `.env.js`
+4.  npm run dev
+5.  open localhost:3000
 
 ### 文件结构
 
-``` shell
+```shell
 ├── build（webpack 打包文件）
 ├── src （所有的资源都在 src 目录下）
 │   ├── api （api文件夹）
@@ -47,14 +48,18 @@
 │   ├── app.vue（vue instance entry，动态全局初始化<head>, etc...）
 ├── static（静态资源文件）
 ```
+
 ### 代码风格
-如果你使用Visual Studio Code作为编辑器，那么你可以安装一些扩展来检查和纠正代码风格
+
+如果你使用 Visual Studio Code 作为编辑器，那么你可以安装一些扩展来检查和纠正代码风格
 
 必装扩展：
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+-   [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+-   [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+-   [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 建议安装：
-- [Beautify css/sass/scss/less](https://marketplace.visualstudio.com/items?itemName=michelemelluso.code-beautifier)
-- [vscode-element-helper](https://marketplace.visualstudio.com/items?itemName=ElemeFE.vscode-element-helper)
+
+-   [Beautify css/sass/scss/less](https://marketplace.visualstudio.com/items?itemName=michelemelluso.code-beautifier)
+-   [vscode-element-helper](https://marketplace.visualstudio.com/items?itemName=ElemeFE.vscode-element-helper)
