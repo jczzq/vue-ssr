@@ -1,8 +1,3 @@
-<style lang="scss">
-#comment-list {
-}
-</style>
-
 <template>
     <div id="comment-list">
         <div v-for="item in list"

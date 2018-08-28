@@ -1,8 +1,3 @@
-<style lang="scss">
-.sub-comment-list-wrap {
-}
-</style>
-
 <template>
     <div class="sub-comment-list-wrap">
         <slot name="header"></slot>

@@ -60,10 +60,6 @@
             &:hover {
                 cursor: pointer;
             }
-
-            &.selected {
-            }
-
             &.disabled {
                 cursor: not-allowed;
             }

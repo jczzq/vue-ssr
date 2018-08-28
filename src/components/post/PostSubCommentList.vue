@@ -12,10 +12,6 @@
         top: -27px;
         font-size: 13px;
     }
-
-    .post-sub-comment-list {
-    }
-
     .sub-comment-footer {
         display: flex;
         flex-direction: row;

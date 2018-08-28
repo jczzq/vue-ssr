@@ -130,9 +130,6 @@
             position: relative;
             margin-left: 180px;
 
-            .sub-comment-list {
-            }
-
             .comments {
                 padding: 4px 15px;
 

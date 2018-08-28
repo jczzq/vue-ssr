@@ -1,8 +1,3 @@
-<style lang="scss">
-.comment-item {
-}
-</style>
-
 <template>
     <div class="comment-item">
     </div>
