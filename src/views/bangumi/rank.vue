@@ -1,41 +1,24 @@
 <style lang="scss" scoped="">
-
 </style>
 
 <template>
-  <div id="bangumi-rank">
-    <h1>番剧排行榜</h1>
-  </div>
+    <div id="bangumi-rank">
+        <h1>番剧排行榜</h1>
+    </div>
 </template>
 
 <script>
-  export default {
+export default {
     name: 'v-',
-    components: {
-
+    components: {},
+    props: {},
+    watch: {},
+    computed: {},
+    data() {
+        return {};
     },
-    props: {
-
-    },
-    watch: {
-
-    },
-    computed: {
-
-    },
-    data () {
-      return {
-
-      }
-    },
-    created () {
-
-    },
-    methods: {
-
-    },
-    mounted () {
-
-    }
-  }
+    created() {},
+    methods: {},
+    mounted() {}
+};
 </script>

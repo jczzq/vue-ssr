@@ -189,8 +189,8 @@ module.exports = (function() {
         {
             key: 'uploadFile',
             value: function uploadFile(_ref) {
-                var path = _ref.path,
-                    name = _ref.name;
+                var path = _ref.path;
+                var name = _ref.name;
                 return (0, _requestPromise2.default)({
                     url: this.sentryReleaseUrl() + '/' + this.releaseVersion + '/files/',
                     method: 'POST',

@@ -1,12 +1,12 @@
-const DEBUG = require('../../.env').DEBUG || false
+const DEBUG = false;
 
 class Log {
-  debug (name, data) {
-    if (!DEBUG) {
-      return
+    debug(name, data) {
+        if (!DEBUG) {
+            return;
+        }
+        console.log(name, data);
     }
-    console.log(name, data)
-  }
 }
 
-module.exports = new Log()
+module.exports = new Log();

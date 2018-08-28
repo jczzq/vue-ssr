@@ -7,7 +7,6 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const resolve = file => path.resolve(__dirname, file);
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = process.env.NODE_ENV === 'development';
-const qiniu = require('../.env').qiniu;
 const now = new Date().getTime();
 // const SentryPlugin = require('./webpack.sentry.plugin.js')
 // const SentryConfig = require('./sentry.config.js')
@@ -17,7 +16,7 @@ module.exports = {
     devtool: isProd ? false : 'sourcemap',
     output: {
         path: resolve('../dist'),
-        publicPath: isProd ? `${qiniu.host}${qiniu.prefix}` : '/dist/',
+        publicPath: '/',
         filename: isDev ? '[name].js' : '[name].[chunkhash].js'
     },
     resolve: {

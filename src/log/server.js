@@ -1,6 +1,6 @@
 // 日志库 bunyan：https://github.com/trentm/node-bunyan
 const bunyan = require('bunyan');
-const DEBUG = require('../../.env').DEBUG || false;
+const DEBUG = false;
 
 class Log {
     constructor() {

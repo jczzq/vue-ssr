@@ -1,42 +1,29 @@
 <style lang="scss">
-  .comment-item {
-
-  }
+.comment-item {
+}
 </style>
 
 <template>
-  <div class="comment-item">
-  </div>
+    <div class="comment-item">
+    </div>
 </template>
 
 <script>
-  export default {
+export default {
     name: 'v-comment-item',
     props: {
-      comment: {
-        type: Object,
-        required: true
-      }
+        comment: {
+            type: Object,
+            required: true
+        }
     },
-    watch: {
-
+    watch: {},
+    computed: {},
+    data() {
+        return {};
     },
-    computed: {
-
-    },
-    data () {
-      return {
-
-      }
-    },
-    created () {
-
-    },
-    methods: {
-
-    },
-    mounted () {
-
-    }
-  }
+    created() {},
+    methods: {},
+    mounted() {}
+};
 </script>

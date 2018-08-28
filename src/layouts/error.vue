@@ -1,31 +1,32 @@
 <template>
-  <div class="error-page">
-    <div>
-      <h1 class="error-code">{{ error.statusCode }}</h1>
-      <div class="error-wrapper-message">
-        <h2 class="error-message">{{ error.message }}</h2>
-      </div>
-      <p v-if="error.statusCode === 404">
-        <a class="error-link" :href="$alias.index">返回首页</a>
-      </p>
+    <div class="error-page">
+        <div>
+            <h1 class="error-code">{{ error.statusCode }}</h1>
+            <div class="error-wrapper-message">
+                <h2 class="error-message">{{ error.message }}</h2>
+            </div>
+            <p v-if="error.statusCode === 404">
+                <a class="error-link"
+                   :href="$alias.index">返回首页</a>
+            </p>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-  export default {
+export default {
     name: 'nuxt-error',
     props: ['error'],
-    head () {
-      return {
-        title: this.error.message || 'An error occured'
-      }
+    head() {
+        return {
+            title: this.error.message || 'An error occured'
+        };
     }
-  }
+};
 </script>
 
 <style scoped>
-  .error-page {
+.error-page {
     color: #000;
     background: #fff;
     top: 0;
@@ -33,12 +34,12 @@
     left: 0;
     right: 0;
     position: absolute;
-    font-family: "SF UI Text", "Helvetica Neue", "Lucida Grande";
+    font-family: 'SF UI Text', 'Helvetica Neue', 'Lucida Grande';
     text-align: center;
     padding-top: 20%;
-  }
+}
 
-  .error-code {
+.error-code {
     display: inline-block;
     font-size: 24px;
     font-weight: 500;
@@ -46,27 +47,27 @@
     border-right: 1px solid rgba(0, 0, 0, 0.298039);
     margin: 0 20px 0 0;
     padding: 10px 23px;
-  }
+}
 
-  .error-wrapper-message {
+.error-wrapper-message {
     display: inline-block;
     text-align: left;
     line-height: 49px;
     height: 49px;
     vertical-align: middle;
-  }
+}
 
-  .error-message {
+.error-message {
     font-size: 14px;
     font-weight: normal;
     margin: 0;
     padding: 0;
-  }
+}
 
-  .error-link {
-    color: #00BCD4;
+.error-link {
+    color: #00bcd4;
     font-weight: normal;
     text-decoration: none;
     font-size: 14px;
-  }
+}
 </style>

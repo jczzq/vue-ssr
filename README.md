@@ -1,14 +1,13 @@
 ### 什么是 SSR
 
-    1.SSR（server-side render），服务端渲染。
+SSR（server-side render），服务端渲染。
 
 ### 快速启动
 
-1.  git clone
-2.  yarn
-3.  copy & rename `.env.example.js` => `.env.js`
-4.  npm run dev
-5.  open localhost:3000
+- git clone
+- npm i
+- npm run dev
+- open localhost:3000
 
 ### 文件结构
 

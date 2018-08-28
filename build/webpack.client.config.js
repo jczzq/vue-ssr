@@ -3,11 +3,8 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack.base.config');
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
-const QiniuPlugin = require('qiniu-webpack-plugin');
 const resolve = file => path.resolve(__dirname, file);
-const isProd = process.env.NODE_ENV === 'production';
 const isDev = process.env.NODE_ENV === 'development';
-const qiniu = require('../.env').qiniu;
 
 const config = merge(base, {
     entry: {
@@ -50,17 +47,6 @@ const config = merge(base, {
 
         if (!isDev) {
             pluginArr = pluginArr.concat([new webpack.optimize.AggressiveSplittingPlugin()]);
-        }
-
-        if (isProd) {
-            pluginArr = pluginArr.concat([
-                new QiniuPlugin({
-                    ACCESS_KEY: qiniu.access,
-                    SECRET_KEY: qiniu.secret,
-                    bucket: qiniu.bucket,
-                    path: qiniu.prefix
-                })
-            ]);
         }
 
         return pluginArr;

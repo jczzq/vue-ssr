@@ -1,45 +1,32 @@
 <style lang="scss" scoped="">
-
 </style>
 
 <template>
-  <li class="sub-comment-item">
-    {{ item.content }}
-  </li>
+    <li class="sub-comment-item">
+        {{ item.content }}
+    </li>
 </template>
 
 <script>
-  export default {
+export default {
     name: 'v-sub-comment-item',
     props: {
-      item: {
-        required: true,
-        type: Object
-      },
-      parentId: {
-        required: true,
-        type: Number
-      }
+        item: {
+            required: true,
+            type: Object
+        },
+        parentId: {
+            required: true,
+            type: Number
+        }
     },
-    watch: {
-
+    watch: {},
+    computed: {},
+    data() {
+        return {};
     },
-    computed: {
-
-    },
-    data () {
-      return {
-
-      }
-    },
-    created () {
-
-    },
-    methods: {
-
-    },
-    mounted () {
-
-    }
-  }
+    created() {},
+    methods: {},
+    mounted() {}
+};
 </script>
