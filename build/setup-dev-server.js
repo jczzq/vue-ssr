@@ -11,6 +11,12 @@ const readFile = (fs, file) => {
     } catch (e) {}
 };
 
+/**
+ * 返回一个promise
+ * @param {*} app new Koa()实例
+ * @param {*} templatePath 模板页面的路径
+ * @param {*} callback 
+ */
 module.exports = (app, templatePath, callback) => {
     let bundle;
     let template;

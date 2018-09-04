@@ -1,8 +1,8 @@
-const env = process.env.NODE_ENV;
-const port = process.env.PORT || 3000;
-const isDev = env === 'development';
-const isProd = env === 'production';
-const host = isProd ? '0.0.0.0' : '127.0.0.1';
+const NODE_ENV = process.env.NODE_ENV;
+const PORT = process.env.PORT || 3000;
+const IS_DEV = NODE_ENV === 'development';
+const IS_PROD = NODE_ENV === 'production';
+const HOST = IS_PROD ? '0.0.0.0' : '127.0.0.1';
 
 const fs = require('fs');
 const path = require('path');
@@ -15,15 +15,16 @@ const Route = require('koa-router');
 const app = new Koa();
 const router = new Route();
 
+// 最大缓存数量100，每15分钟刷新缓存
 const microCache = LRU({
     max: 100,
-    maxAge: isDev ? 0 : 1000 * 60 * 15
+    maxAge: IS_DEV ? 0 : 1000 * 60 * 15
 });
 const cacheHTML = status => {
     const code = [200, 404, 429, 500, 503].indexOf(status) !== -1 ? status : 500;
     const hit = microCache.get(`render-html-${code}`);
     let html;
-    if (hit && !isDev) {
+    if (hit && !IS_DEV) {
         html = hit;
     } else {
         html = fs.readFileSync(resolve(`./src/templates/${code}.template.html`), 'utf-8');
@@ -38,7 +39,7 @@ const template = cacheHTML(200);
 
 let renderer;
 
-if (isDev) {
+if (IS_DEV) {
     app.use(require('koa-logger')());
     require('./build/setup-dev-server')(app, templatePath, (bundle, options) => {
         renderer = createRenderer(bundle, options);
@@ -85,6 +86,7 @@ router.get('*', async ctx => {
     };
 
     ctx.set('X-XSS-Protection', '1; mode=block');
+    // HTTP/1.1 分块传输编码
     ctx.set('Transfer-Encoding', 'chunked');
     ctx.set('X-Content-Type-Options', 'nosniff');
     ctx.set('X-Frame-Options', 'DENY');
@@ -102,5 +104,5 @@ router.get('*', async ctx => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(port, host);
-console.log('Server listening on ' + host + ':' + port);
+app.listen(PORT, HOST);
+console.log('Server listening on ' + HOST + ':' + PORT);
