@@ -45,7 +45,9 @@ const config = merge(base, {
             new VueSSRClientPlugin()
         ];
 
+        // 线上环境
         if (!isDev) {
+            // 将 bundle 拆分成更小的 chunk，直到各个 chunk 的大小达到 option 设置的 maxSize
             pluginArr = pluginArr.concat([new webpack.optimize.AggressiveSplittingPlugin()]);
         }
 

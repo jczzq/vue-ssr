@@ -1,4 +1,5 @@
 const NODE_ENV = process.env.NODE_ENV;
+console.log('--------- process.env.NODE_ENV: ', NODE_ENV);
 const PORT = process.env.PORT || 3000;
 const IS_DEV = NODE_ENV === 'development';
 const IS_PROD = NODE_ENV === 'production';
