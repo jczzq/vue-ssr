@@ -106,4 +106,4 @@ router.get('*', async ctx => {
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(PORT, HOST);
-console.log('Server listening on ' + HOST + ':' + PORT);
+console.log('Server listening on http://' + HOST + ':' + PORT);

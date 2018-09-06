@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { env, host, timeout } from 'env';
-
 class Http {
     constructor(ctx) {
         this.instance = axios.create({
