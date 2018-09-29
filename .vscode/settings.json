@@ -12,5 +12,7 @@
         "**/bower_components": true,
         "**/dist": true,
         "**/theme": true
-    }
+    },
+    "editor.tabSize": 4,
+    "editor.useTabStops": true
 }
