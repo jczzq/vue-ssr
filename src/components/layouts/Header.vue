@@ -304,7 +304,7 @@ $avatar-height: 36px;
                              :to="$alias.index">主站</router-link>
                 <el-dropdown>
                     <router-link class="nav-link el-dropdown-link"
-                                 :to="$alias.bangumiNews">番剧</router-link>
+                                 :to="$alias.bangumiNews">番剧233</router-link>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item>
                             <router-link class="nav-link"

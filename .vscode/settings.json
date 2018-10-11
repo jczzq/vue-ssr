@@ -8,9 +8,6 @@
     },
     // 全局搜索忽略文件
     "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/dist": true,
-        "**/theme": true
+        "**/dist": true
     }
 }

@@ -4,7 +4,7 @@
     "author": "jczzq<1195262383@qq.com>",
     "private": true,
     "scripts": {
-        "dev": "cross-env NODE_ENV=development node server",
+        "dev": "cross-env NODE_ENV=development nodemon server",
         "start": "cross-env NODE_ENV=staging node server",
         "analyzer": "cross-env NODE_ENV=staging webpack --config build/webpack.analyzer.config.js --progress --hide-modules",
         "staging": "rimraf dist && npm run staging:client && npm run staging:server",
