@@ -130,13 +130,12 @@ export default {
             this.$captcha({
                 success: ({ data }) => {
                     const api = new UserApi();
-                    api
-                        .login({
-                            access: this.form.access,
-                            secret: this.form.secret,
-                            remember: this.form.remember,
-                            geetest: data
-                        })
+                    api.login({
+                        access: this.form.access,
+                        secret: this.form.secret,
+                        remember: this.form.remember,
+                        geetest: data
+                    })
                         .then(token => {
                             this.$cookie.set('JWT-TOKEN', token, {
                                 expires: this.form.remember ? 365 : 1

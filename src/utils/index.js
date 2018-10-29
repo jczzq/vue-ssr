@@ -87,7 +87,6 @@ Vue.component(Time.name, Time);
 Vue.component(BangumiPanel.name, BangumiPanel);
 Vue.component(NoContent.name, NoContent);
 Vue.component(Hr.name, Hr);
-Vue.component(Share.name, Share);
 
 Vue.use({
     install(Vue, options) {
