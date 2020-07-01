@@ -1,9 +1,9 @@
 const dev = process.env.NODE_ENV === 'development'
 
 const host = {
-  development: 'https://cl-gateway.tuhutest.cn/cl-tire-site',
-  staging: 'https://cl-gateway.tuhutest.cn/cl-tire-site',
-  production: 'https://cl-gateway.tuhu.cn/cl-tire-site'
+  development: 'https://cnodejs.org',
+  staging: 'https://cnodejs.org',
+  production: 'https://cnodejs.org'
 }
 
 const timeout = {

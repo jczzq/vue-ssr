@@ -1,14 +1,12 @@
 import CacheData from '../CacheData';
-import Api from '../../api/tireGuide';
+import Api from '../../api/topic';
 
 const cache1 = new CacheData([]);
 
 export default {
   namespaced: true,
   state: () => ({
-    // 轮胎导购列表
-    isMatch: false,
-    isMatchLoading: false,
+    // topic list
     list: [],
     loading: true
   }),
@@ -24,11 +22,11 @@ export default {
      */
     async LOAD_LIST({ commit }, { ctx, param, force }) {
       const api = new Api(ctx);
-      const res = await cache1.Load(api.search, {
+      const res = await cache1.Load(api.get, {
         force,
         param
       });
-      commit('SET', { key: 'list', value: res.data.guideTireList });
+      commit('SET', { key: 'list', value: res.data.data });
       return res;
     }
   },

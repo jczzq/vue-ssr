@@ -25,7 +25,6 @@ export function createRouter() {
         children: [
           {
             path: '',
-            name: 'homepage',
             component: () => import('~/views/index')
           }
         ]

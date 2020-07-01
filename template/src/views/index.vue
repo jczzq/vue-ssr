@@ -12,7 +12,7 @@ export default {
   components: {},
   async asyncData({ store, ctx }) {
     const [carInfo, channelInfo, orderChannel] = [{}, {}, ''];
-    await store.dispatch('homepage/LOAD_LIST', {
+    await store.dispatch('guide/LOAD_LIST', {
       param: {
         areaInfo: {
           city: '',
@@ -38,10 +38,8 @@ export default {
     });
   },
   computed: {
-    ...mapState('guide', {
-      isMatchLoading: 'isMatchLoading',
-      isMatch: 'isMatch',
-      guideTireList: 'list',
+    ...mapState('topic', {
+      topicList: 'list',
       loading: 'loading'
     })
   },

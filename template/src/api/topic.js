@@ -1,7 +1,7 @@
 import BaseApi from './_baseApi';
 
 export default class extends BaseApi {
-  getUserInfo({ zone }) {
-    return this.http.get(`user/${zone}/show`);
+  get(param) {
+    return this.http.post(`/api/v1/topics`, param);
   }
 }
