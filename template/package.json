@@ -1,7 +1,7 @@
 {
-  "name": "vue-ssr",
-  "description": "A Scalable，elastic project scaffold",
-  "author": "jczzq<1195262383@qq.com>",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server",

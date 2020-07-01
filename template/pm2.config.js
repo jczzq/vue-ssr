@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'Avalon',
+    name: '{{name}}',
     script: './server.js',
     watch: false,
     ignore_watch: 'node_modules',

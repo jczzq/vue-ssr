@@ -5,7 +5,7 @@ const DEBUG = false;
 class Log {
   constructor() {
     this.log = bunyan.createLogger({
-      name: 'avalon',
+      name: '{{name}}',
       level: 'debug',
       streams: [
         {
