@@ -1,16 +1,15 @@
 <template>
-    <div class="error-page">
-        <div>
-            <h1 class="error-code">{{ error.statusCode }}</h1>
-            <div class="error-wrapper-message">
-                <h2 class="error-message">{{ error.message }}</h2>
-            </div>
-            <p v-if="error.statusCode === 404">
-                <a class="error-link"
-                   :href="$alias.index">返回首页</a>
-            </p>
-        </div>
+  <div class="error-page">
+    <div>
+      <h1 class="error-code">\{\{ error.statusCode }}</h1>
+      <div class="error-wrapper-message">
+        <h2 class="error-message">{{ error.message }}</h2>
+      </div>
+      <p v-if="error.statusCode === 404">
+        <a class="error-link" :href="$alias.index">返回首页</a>
+      </p>
     </div>
+  </div>
 </template>
 
 <script>
@@ -27,47 +26,46 @@ export default {
 
 <style scoped>
 .error-page {
-    color: #000;
-    background: #fff;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    font-family: 'SF UI Text', 'Helvetica Neue', 'Lucida Grande';
-    text-align: center;
-    padding-top: 20%;
+  color: #000;
+  background: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+  padding-top: 20%;
 }
 
 .error-code {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 500;
-    vertical-align: top;
-    border-right: 1px solid rgba(0, 0, 0, 0.298039);
-    margin: 0 20px 0 0;
-    padding: 10px 23px;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  vertical-align: top;
+  border-right: 1px solid rgba(0, 0, 0, 0.298039);
+  margin: 0 20px 0 0;
+  padding: 10px 23px;
 }
 
 .error-wrapper-message {
-    display: inline-block;
-    text-align: left;
-    line-height: 49px;
-    height: 49px;
-    vertical-align: middle;
+  display: inline-block;
+  text-align: left;
+  line-height: 49px;
+  height: 49px;
+  vertical-align: middle;
 }
 
 .error-message {
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
 .error-link {
-    color: #00bcd4;
-    font-weight: normal;
-    text-decoration: none;
-    font-size: 14px;
+  color: #00bcd4;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 14px;
 }
 </style>
