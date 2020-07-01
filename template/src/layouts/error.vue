@@ -1,9 +1,9 @@
 <template>
   <div class="error-page">
     <div>
-      <h1 class="error-code">\{\{ error.statusCode }}</h1>
+      <h1 class="error-code">\{{ error.statusCode }}</h1>
       <div class="error-wrapper-message">
-        <h2 class="error-message">{{ error.message }}</h2>
+        <h2 class="error-message">\{{ error.message }}</h2>
       </div>
       <p v-if="error.statusCode === 404">
         <a class="error-link" :href="$alias.index">返回首页</a>
