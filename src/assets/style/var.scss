@@ -1,0 +1,52 @@
+// 主色调
+$color-primary: #DF3348;
+
+// 字体
+$color-text-primary: #333;
+$color-text-regular: #666;
+$color-text-secondary: #999;
+$color-text-placeholder: #D9D9D9;
+
+$color-white: #fff;
+$color-black: #000;
+$color-orange: #f60;
+$color-success: #67C23A;
+$color-warning: #E6A23C;
+$color-danger: #F56C6C;
+$color-info: #909399;
+
+/* Background
+-------------------------- */
+$background-color-base: #f5f7fa;
+$background-color-deep: #f3f3f3;
+$background-color-extra-base: #FBF6FC;
+$background-color: #FAFAFA;
+
+/* Size
+-------------------------- */
+$size-base: 0.7rem;
+
+/* Font
+-------------------------- */
+$font-path: 'fonts';
+$font-size-base: 0.7rem;
+$font-size-extra-small: 0.6rem;
+$font-size-small: 0.65rem;
+$font-size-medium: 0.8rem;
+$font-size-large: 0.9rem;
+$font-size-extra-large: 1rem;
+$font-color-disabled-base: #bbb;
+$font-weight-primary: 500;
+$font-line-height-primary: 1.2rem;
+
+/* Margin
+-------------------------- */
+$margin-card-default: 0.8rem;
+$padding-card-default: 0.8rem;
+$padding-sidenav: 0.6rem 1.2rem;
+
+/* 刘海屏底部安全区背景色
+-------------------------- */
+$bgc_body: white;
+$bgc_ios_fill_bottom_area: white;
+$body_default_padding_top: 0;

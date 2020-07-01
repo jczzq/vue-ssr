@@ -15,13 +15,13 @@
 
 <script>
 export default {
-    name: 'nuxt-error',
-    props: ['error'],
-    head() {
-        return {
-            title: this.error.message || 'An error occured'
-        };
-    }
+  name: 'nuxt-error',
+  props: ['error'],
+  head() {
+    return {
+      title: this.error.message || 'An error occured'
+    };
+  }
 };
 </script>
 

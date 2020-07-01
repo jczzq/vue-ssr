@@ -1,0 +1,248 @@
+@import './var.scss'; // 变量
+@import './reset.scss'; // 重置浏览器默认样式
+@import './common.scss'; // 常用样式类
+@import './flex.scss'; // flex封装
+
+/* custom reset
+-------------------------- */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  box-sizing: border-box;
+  font-size: $size-base;
+  color: $color-text-primary;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: $bgc_body;
+  padding-top: $body_default_padding_top;
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: 0;
+  /* 适配底部小黑条 */
+  padding-bottom: costant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.lh_20 {
+  line-height: 1rem;
+}
+.word-break-normal {
+  word-break: normal;
+}
+.word-break-all {
+  word-break: break-all;
+}
+.ios-fill-bottom-area {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  height: 0;
+  height: costant(safe-area-inset-bottom);
+  height: env(safe-area-inset-bottom);
+  background-color: $bgc_ios_fill_bottom_area;
+}
+
+@supports (bottom: constant(safe-area-inset-top)) or (bottom: env(safe-area-inset-top)) {
+  .ios-fill-bottom-area {
+    display: block;
+  }
+}
+/* font size (fs)
+-------------------------- */
+
+.fs__base {
+  font-size: $size-base !important;
+}
+
+.fs__extra_small {
+  font-size: $font-size-extra-small !important;
+}
+
+.fs__small {
+  font-size: $font-size-small !important;
+}
+
+.fs__medium {
+  font-size: $font-size-medium !important;
+}
+
+.fs__large {
+  font-size: $font-size-large !important;
+}
+
+.fs__extra_large {
+  font-size: $font-size-extra-large !important;
+}
+
+/* Colors (color)
+-------------------------- */
+
+.color__primary {
+  color: $color-primary;
+}
+
+.color__success {
+  color: $color-success;
+}
+
+.color__warning {
+  color: $color-warning;
+}
+
+.color__danger {
+  color: $color-danger;
+}
+
+.color__info {
+  color: $color-info;
+}
+
+.color__text_primary {
+  color: $color-text-primary;
+}
+
+.color__text_regular {
+  color: $color-text-regular;
+}
+
+.color__text_secondary {
+  color: $color-text-secondary;
+}
+
+.color__text_placeholder {
+  color: $color-text-placeholder;
+}
+
+.color__white {
+  color: $color-white;
+}
+
+.color__black {
+  color: $color-black;
+}
+
+.color__orange {
+  color: $color-orange;
+}
+
+/* background-color (bgc)
+-------------------------- */
+
+.bgc__white {
+  background-color: $color-white;
+}
+
+.bgc__base {
+  background-color: $background-color-base;
+}
+
+.bgc__deep {
+  background-color: $background-color-deep;
+}
+
+.bgc__primary {
+  background-color: $color-primary;
+}
+
+/* Margin/Padding
+-------------------------- */
+
+.m- {
+  &def {
+    margin: $margin-card-default;
+  }
+  &t {
+    margin-top: $margin-card-default;
+    &-0 {
+      margin-top: 0;
+    }
+  }
+  &b {
+    margin-bottom: $margin-card-default;
+    &-0 {
+      margin-bottom: 0;
+    }
+  }
+  &l {
+    margin-left: $margin-card-default;
+    &-0 {
+      margin-left: 0;
+    }
+  }
+  &r {
+    margin-right: $margin-card-default;
+    &-0 {
+      margin-right: 0;
+    }
+  }
+}
+
+.p- {
+  &def {
+    padding: $padding-card-default;
+  }
+  &t {
+    padding-top: $padding-card-default;
+    &-0 {
+      padding-top: 0;
+    }
+  }
+  &b {
+    padding-bottom: $padding-card-default;
+    &-0 {
+      padding-bottom: 0;
+    }
+  }
+  &l {
+    padding-left: $padding-card-default;
+    &-0 {
+      padding-left: 0;
+    }
+  }
+  &r {
+    padding-right: $padding-card-default;
+    &-0 {
+      padding-right: 0;
+    }
+  }
+}
+
+// 淡入
+.fadein-enter-active {
+  transition: all 0.3s ease;
+}
+
+.fadein-enter {
+  opacity: 0;
+}
+// 上出上入
+.slide-up-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slide-up-enter {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+// zoom-in-top
+$--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+  opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+.zoom-in-top-enter-active,
+.zoom-in-top-leave-active {
+  transform: scaleY(1);
+  transition: $--md-fade-transition;
+  transform-origin: center top;
+}
+.zoom-in-top-enter,
+.zoom-in-top-leave-active {
+  transform: scaleY(0);
+}

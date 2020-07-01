@@ -1,0 +1,133 @@
+/* commons
+-------------------------- */
+
+.cp {
+  cursor: pointer;
+}
+
+.fw__b {
+  font-weight: bold;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.text__ {
+  &right {
+    text-align: right;
+  }
+
+  &left {
+    text-align: left;
+  }
+  &center {
+    text-align: center;
+  }
+}
+.pull__ {
+  &right {
+    float: right;
+  }
+  &left {
+    float: left;
+  }
+  &center {
+    margin: 0 auto;
+    display: block;
+  }
+}
+.text-overhide {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+$unit-size: 0.2rem;
+
+@for $i from 1 through 5 {
+  .m-#{$i} {
+    margin: ($i * $unit-size);
+  }
+  .m-t-#{$i} {
+    margin-top: ($i * $unit-size);
+  }
+  .m-b-#{$i} {
+    margin-bottom: ($i * $unit-size);
+  }
+  .m-l-#{$i} {
+    margin-left: ($i * $unit-size);
+  }
+  .m-r-#{$i} {
+    margin-right: ($i * $unit-size);
+  }
+  .p-#{$i} {
+    padding: ($i * $unit-size);
+  }
+  .p-t-#{$i} {
+    padding-top: ($i * $unit-size);
+  }
+  .p-b-#{$i} {
+    padding-bottom: ($i * $unit-size);
+  }
+  .p-l-#{$i} {
+    padding-left: ($i * $unit-size);
+  }
+  .p-r-#{$i} {
+    padding-right: ($i * $unit-size);
+  }
+  .line-#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+}
+.p-y-1 {
+  padding-top: $unit-size;
+  padding-bottom: $unit-size;
+}
+.p-x-2 {
+  padding-left: $unit-size * 2;
+  padding-right: $unit-size * 2;
+}
+
+.round {
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.full_width {
+  max-width: 100%;
+  width: 100% !important;
+}
+.full_height {
+  height: 100%;
+}
+.inline_block {
+  display: inline-block;
+}
+
+.relative {
+  position: relative;
+}
+
+// 给容器清除浮动
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: '';
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.va_middle {
+  vertical-align: middle;
+}
+
+.line_through {
+  text-decoration: line-through;
+}

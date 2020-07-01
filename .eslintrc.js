@@ -17,8 +17,9 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
     'arrow-parens': 0,
-    // 4个空格缩进
-    indent: ['error', 4, { SwitchCase: 1 }],
+    'comma-dangle': 0,
+    // 2个空格缩进
+    indent: ['error', 2, { SwitchCase: 1 }],
     // 分号
     semi: ['error', 'always'],
     // 形参可定义不使用

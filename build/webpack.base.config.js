@@ -59,8 +59,7 @@ module.exports = {
                                         loader: 'sass-resources-loader',
                                         options: {
                                             resources: [
-                                                resolve('../src/assets/css/variables.scss'),
-                                                resolve('../src/assets/css/mixins.scss')
+                                                resolve('../src/assets/style/var.scss')
                                             ]
                                         }
                                     }

@@ -1,0 +1,61 @@
+// 工程默认样式
+html {
+  box-sizing: border-box;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+button,
+input,
+select,
+textarea {
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'PingFangSC-Regular', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei',
+    'Helvetica Neue', '微软雅黑', Arial, sans-serif;
+  min-height: 100vh;
+  // -webkit-overflow-scrolling: auto;
+}
+body,
+button,
+dd,
+dl,
+ol,
+ul,
+p,
+h1,
+h3,
+pre,
+ul {
+  font-family: 'PingFangSC-Regular', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei',
+    'Helvetica Neue', '微软雅黑', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  color: $color-text-primary;
+}
+
+.icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 1em;
+  height: 1em;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示 normalize.css 中也包含这行 */
+  overflow: hidden;
+}

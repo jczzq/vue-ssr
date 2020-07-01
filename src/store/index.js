@@ -1,94 +1,123 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import UserApi from '~/api/userApi';
-import homepage from './homepage';
-import bangumi from './bangumi';
-import video from './video';
-import users from './users';
-import image from './image';
-import post from './post';
-import cartoonRole from './cartoonRole';
-import trending from './trending';
-import comment from './comment';
-
-import ImageApi from '~/api/imageApi';
+import guide from './modules/guide';
 
 Vue.use(Vuex);
+const initState = () => ({
+  _userInfo: {},
+  _locationInfo: {},
+  _carInfo: {},
+  _channel: {
+    orderChannel: '',
+    channelInfo: {
+      channel: ''
+    }
+  },
+
+    /**
+     * App携带数据 (true: 测试组；false：原始组；undefined：都不是)
+     */
+  intentData: {},
+    // App静态变量
+  appStaticProperty: {},
+    // 天降神券
+  hasGodPCode: undefined
+});
 
 export function createStore() {
-    return new Vuex.Store({
-        strict: process.env.NODE_ENV !== 'production',
-        state: () => ({
-            user: null,
-            login: false,
-            banner: 'banner/2.jpg'
-        }),
-        mutations: {
-            SET_USER(state, user) {
-                state.user = user;
-                state.login = true;
-            },
-            SET_USER_INFO(state, data) {
-                Object.keys(data).forEach(key => {
-                    state.user[key] = data[key];
-                });
-            },
-            USE_COIN(state) {
-                state.user.coin && state.user.coin--;
-            }
-        },
-        actions: {
-            async init({ commit }, ctx) {
-                const cookie = ctx.header.cookie;
-                if (cookie) {
-                    let token = '';
-                    cookie.split('; ').forEach(item => {
-                        const temp = item.split('=');
-                        if (temp[0] === 'JWT-TOKEN') {
-                            token = temp[1];
-                        }
-                    });
-                    if (token) {
-                        const api = new UserApi(ctx);
-                        try {
-                            const user = await api.getLoginUser();
-                            if (user) {
-                                commit('SET_USER', user);
-                            }
-                        } catch (e) {
-                            // do nothing
-                        }
-                    }
-                }
-            },
-            async getUpToken({ state, commit }, ctx) {
-                if (state.user.uptoken.expiredAt <= parseInt(Date.now() / 1000, 10)) {
-                    const api = new ImageApi(ctx);
-                    const data = await api.getUpToken();
-                    commit('SET_USER_INFO', {
-                        uptoken: data
-                    });
-                }
-            },
-            async getNotification({ commit }, ctx) {
-                const api = new UserApi(ctx);
-                const data = await api.getNotificationCount();
-                commit('SET_USER_INFO', {
-                    notification: data
-                });
-            }
-        },
-        getters: {},
-        modules: {
-            homepage,
-            bangumi,
-            video,
-            users,
-            image,
-            post,
-            cartoonRole,
-            trending,
-            comment
+  return new Vuex.Store({
+    strict: process.env.NODE_ENV !== 'production',
+    state: initState(),
+    mutations: {
+      SET(state, payload) {
+        state[payload.key] = payload.value;
+      },
+      RESET(state) {
+        Object.assign(state, initState());
+      },
+      ASSIGN(state, { key, value = {} }) {
+        const originState = state[key];
+        for (const k in value) {
+          if (value.hasOwnProperty(k)) {
+            const v = value[k];
+            Vue.set(originState, k, v);
+          }
         }
-    });
+      },
+      setCarInfo(state, payload = {}) {
+        if (payload) {
+          state._carInfo = Object.assign({}, payload.car);
+        } else {
+          state._carInfo = {};
+        }
+      },
+      setUserInfo(state, payload = {}) {
+        if (payload) {
+          state._userInfo = Object.assign({}, payload.userInfo);
+        } else {
+          state._userInfo = {};
+        }
+      },
+      setLocationInfo(state, payload = {}) {
+        if (payload) {
+          state._locationInfo = Object.assign({}, payload.locateInfo);
+        } else {
+          state._locationInfo = {};
+        }
+      }
+    },
+    actions: {
+      async INIT_INTENT_DATA({ commit }) {
+        const a = performance.now();
+        if (!window.__INTENT_DATA__) {
+          const { result } = await Vue.prototype.$tHybrid.actionWithNative(
+                        'getIntentData'
+                    );
+          window.__INTENT_DATA__ = result;
+        }
+        commit('SET', {
+          key: 'intentData',
+          value: window.__INTENT_DATA__
+        });
+        console.warn(`=初始化intentData= ${performance.now() - a}ms`);
+      },
+            // 设置App静态变量 并 更新Vuex变量
+      SET_STATIC_VAR({ commit }, propertyMap) {
+        commit('ASSIGN', {
+          key: 'appStaticProperty',
+          value: propertyMap
+        });
+        return Vue.prototype.$tHybrid.actionWithNative('saveStaticProperty', {
+          propertyMap
+        });
+      },
+            // 获取App静态变量 并 替换Vuex变量，可直接获取某个属性
+      async GET_STATIC_VAR({ commit }, prop) {
+        const { result } = await Vue.prototype.$tHybrid.actionWithNative(
+                    'getStaticProperty',
+          {
+            source: '/enhancedWebView'
+          }
+                );
+        commit('SET', {
+          key: 'appStaticProperty',
+          value: result
+        });
+        return prop ? result[prop] : result;
+      }
+    },
+    getters: {
+            // 轮胎规格（包含特殊规格）
+      tireSize(state) {
+        return (
+                    state._carInfo.TireSizeForSingle ||
+                    state._carInfo.SpecialTireSizeForSingle ||
+                    ''
+        );
+      }
+    },
+    modules: {
+      guide
+    }
+  });
 }

@@ -1,8 +1,7 @@
-/assets
+src/assets/font/
 /templates
 /build
 /config
 /dist/
 /test/
-/*.js
 /test/unit/coverage/
