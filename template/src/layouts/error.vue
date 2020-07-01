@@ -6,7 +6,7 @@
         <h2 class="error-message">\{{ error.message }}</h2>
       </div>
       <p v-if="error.statusCode === 404">
-        <a class="error-link" :href="$alias.index">返回首页</a>
+        <a class="error-link" href="/">返回首页</a>
       </p>
     </div>
   </div>
