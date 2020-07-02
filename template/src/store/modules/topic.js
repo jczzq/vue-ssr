@@ -21,13 +21,17 @@ export default {
      * @param {boolean} force 是否强制刷新
      */
     async LOAD_LIST({ commit }, { ctx, param, force }) {
-      const api = new Api(ctx);
-      const res = await cache1.Load(api.get, {
-        force,
-        param
-      });
-      commit('SET', { key: 'list', value: res.data.data });
-      return res;
+      try {
+        const api = new Api(ctx);
+        const res = await cache1.Load(api.get.bind(api), {
+          force,
+          param
+        });
+        commit('SET', { key: 'list', value: res.data });
+        return res;
+      } catch (error) {
+        console.info('LOAD_LIST error: ', error);
+      }
     }
   },
   getters: {}

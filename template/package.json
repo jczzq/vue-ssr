@@ -1,5 +1,5 @@
 {
-  "name": "{{ name }}",
+  "name": "vue-ssr",
   "description": "{{ description }}",
   "author": "{{ author }}",
   "private": true,

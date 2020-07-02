@@ -24,8 +24,12 @@ export function createRouter() {
         component: () => import('~/layouts/default'),
         children: [
           {
-            path: '',
+            path: 'topic',
             component: () => import('~/views/index')
+          },
+          {
+            path: 'topic/:id',
+            component: () => import('~/views/topic/detail')
           }
         ]
       }

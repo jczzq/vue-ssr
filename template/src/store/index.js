@@ -27,7 +27,9 @@ export function createStore() {
         }
       }
     },
-    actions: {},
+    actions: {
+      async init({ commit }, ctx) {}
+    },
     getters: {},
     modules: {
       topic

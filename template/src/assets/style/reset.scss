@@ -48,6 +48,10 @@ ul {
   color: $color-text-primary;
 }
 
+ul, li {
+  list-style: none;
+}
+
 .icon {
   /* 通过设置 font-size 来改变图标大小 */
   width: 1em;

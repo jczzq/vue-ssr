@@ -1,23 +1,14 @@
-<style lang="scss">
-#layout-default {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-
-    > .main-view {
-        flex-grow: 1;
-    }
-}
-</style>
-
 <template>
-    <div id="layout-default">
-        <router-view class="main-view"></router-view>
-    </div>
+  <div class="LayoutDefault">
+    <TitleBar />
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
+import TitleBar from '../components/TitleBar';
 export default {
-  components: {}
+  name: 'LayoutDefault',
+  components: { TitleBar }
 };
 </script>

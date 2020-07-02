@@ -98,7 +98,7 @@ router.get('*', async ctx => {
   } catch (e) {
     const code = e.code || 500;
     ctx.status = code;
-    console.error(e);
+    console.error('renderToString error: ', e);
     ctx.body = cacheHTML(code);
   }
 });

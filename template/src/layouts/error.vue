@@ -39,24 +39,24 @@ export default {
 
 .error-code {
   display: inline-block;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 500;
   vertical-align: top;
-  border-right: 1px solid rgba(0, 0, 0, 0.298039);
-  margin: 0 20px 0 0;
-  padding: 10px 23px;
+  border-right: 0.1rem solid rgba(0, 0, 0, 0.298039);
+  margin: 0 2rem 0 0;
+  padding: 1rem 2.3rem;
 }
 
 .error-wrapper-message {
   display: inline-block;
   text-align: left;
-  line-height: 49px;
-  height: 49px;
+  line-height: 5rem;
+  height: 5rem;
   vertical-align: middle;
 }
 
 .error-message {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -66,6 +66,6 @@ export default {
   color: #00bcd4;
   font-weight: normal;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 </style>
