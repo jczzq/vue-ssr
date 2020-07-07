@@ -33,11 +33,11 @@ class Http {
       const res = await this.instance.post(url, data);
       const newToken = res.headers.authorization;
       if (newToken) {
-        return Object.assign(res.data.data, {
+        return Object.assign(res.data, {
           token: newToken.split('Bearer ').pop()
         });
       }
-      return res.data.data;
+      return res.data;
     } catch (e) {
       const code = e.response ? e.response.status : 500;
       if (code === 401) {

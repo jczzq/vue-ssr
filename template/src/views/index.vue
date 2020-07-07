@@ -12,6 +12,7 @@
         <div flex="none" class="user_box" v-if="item.author">
           <p class="fs__large fw__b">{{ item.author.loginname }}</p>
           <img class="avatar" :src="item.author.avatar_url" alt="" />
+          <p><router-link :to="`/topic/${item.id}`">去文章详情</router-link></p>
         </div>
         <div flex="auto" v-html="item.content"></div>
       </div>
@@ -47,25 +48,21 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  overflow-y: auto;
-}
 .avatar {
-  width: 10rem;
-  height: 10rem;
+  width: 6rem;
+  height: 6rem;
 }
 
 .topic_list {
   margin: 0 auto;
-  padding-top: 5rem;
   width: 64rem;
-  max-width: 64rem;
+  max-width: 100vw;
   overflow-x: hidden;
 }
 .topic_item {
   padding: 1.6rem;
   .user_box {
-    width: 12rem;
+    width: 6rem;
   }
 }
 .markdown-text {

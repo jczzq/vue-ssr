@@ -1,7 +1,7 @@
 <template>
   <div class="LayoutDefault">
     <TitleBar />
-    <router-view></router-view>
+    <router-view class="main_view"></router-view>
   </div>
 </template>
 
@@ -12,3 +12,12 @@ export default {
   components: { TitleBar }
 };
 </script>
+
+<style lang="scss">
+body {
+  overflow-y: auto;
+}
+.main_view {
+  padding-top: 5rem;
+}
+</style>

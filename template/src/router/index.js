@@ -21,6 +21,7 @@ export function createRouter() {
     routes: [
       {
         path: '/',
+        redirect: '/topic',
         component: () => import('~/layouts/default'),
         children: [
           {

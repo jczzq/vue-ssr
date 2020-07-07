@@ -21,7 +21,7 @@ export default ctx => {
   });
 
   http.interceptors.response.use(
-        res => res.data.data,
+        res => res.data,
         err => {
           if (err.message === `timeout of ${timeout.client}ms exceeded`) {
             return Promise.reject('网路请求超时，请稍候再试！'); // eslint-disable-line prefer-promise-reject-errors

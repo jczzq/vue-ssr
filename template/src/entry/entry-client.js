@@ -77,9 +77,3 @@ router.onReady(() => {
 
   app.$mount('#app');
 });
-
-router.afterEach((to, from) => {
-  if (!dev && !(from.name === null && from.fullPath === '/')) {
-    _hmt.push(['_trackPageview', to.fullPath]); // eslint-disable-line no-undef
-  }
-});

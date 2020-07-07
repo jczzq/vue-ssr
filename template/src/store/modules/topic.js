@@ -8,6 +8,7 @@ export default {
   state: () => ({
     // topic list
     list: [],
+    detail: {},
     loading: true
   }),
   mutations: {
@@ -17,7 +18,7 @@ export default {
   },
   actions: {
     /**
-     * 请求导购列表
+     * 加载列表
      * @param {boolean} force 是否强制刷新
      */
     async LOAD_LIST({ commit }, { ctx, param, force }) {
@@ -31,6 +32,22 @@ export default {
         return res;
       } catch (error) {
         console.info('LOAD_LIST error: ', error);
+      }
+    },
+    /**
+     * 加载详情
+     */
+    async LOAD_DETAIL({ commit }, { ctx, param, force }) {
+      try {
+        const api = new Api(ctx);
+        const res = await cache1.Load(api.getOne.bind(api), {
+          force,
+          param
+        });
+        commit('SET', { key: 'detail', value: res.data });
+        return res;
+      } catch (error) {
+        console.info('LOAD_DETAIL error: ', error);
       }
     }
   },

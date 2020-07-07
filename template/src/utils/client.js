@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import '~/assets/js/rem';
+// import '~/assets/js/rem';
 // import scrollToY from '~/assets/js/scrollToY';
 // import Backdrop from '~/assets/js/Backdrop';
 
