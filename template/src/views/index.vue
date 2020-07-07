@@ -10,7 +10,7 @@
         layout-align="start start"
       >
         <div flex="none" class="user_box" v-if="item.author">
-          <p class="fs__large fw__b">{{ item.author.loginname }}</p>
+          <p class="fs__large fw__b" v-text="item.author.loginname"></p>
           <img class="avatar" :src="item.author.avatar_url" alt="" />
           <p><router-link :to="`/topic/${item.id}`">去文章详情</router-link></p>
         </div>
