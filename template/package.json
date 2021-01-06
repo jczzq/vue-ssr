@@ -22,7 +22,7 @@
     "npm": ">=4.0"
   },
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.21.1",
     "bunyan": "^1.8.12",
     "clipboard": "^2.0.0",
     "koa": "^2.3.0",
